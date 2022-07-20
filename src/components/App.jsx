@@ -6,6 +6,7 @@ import { ContactList } from "./ContactList";
 import { Filter } from "./Filter";
 import { ContactForm } from "./ContactForm";
 import PropTypes from 'prop-types';
+import { Container, MyHeader } from './styled';
 
 
 export class App extends Component {
@@ -77,14 +78,15 @@ export class App extends Component {
       const visibleContacts = this.getVisibleContacts();
 
       return (
-          <>
-          <HeadTitle>Phonebook</HeadTitle>
+        <>
+          <Container>
+          <MyHeader>Phonebook</MyHeader>
 
           <ContactForm 
               initialValues={this.state} 
               onSubmit={this.handleSubmit}/>
         
-          <HeadTitle>Contacts</HeadTitle>
+          <MyHeader>Contacts</MyHeader>
 
           <Filter             
               contacts={this.state.contacts} 
@@ -94,7 +96,9 @@ export class App extends Component {
           <ContactList 
               filteredArr={visibleContacts} 
               deleteContact={this.deleteContact}
-         />
+              
+            />
+            </Container>
         </>
       )
     }
