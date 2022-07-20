@@ -1,7 +1,6 @@
 import {Component} from "react";
 import React from 'react';
 import { nanoid } from 'nanoid'
-import { HeadTitle } from "./PhoneBook.styled";
 import { ContactList } from "./ContactList";
 import { Filter } from "./Filter";
 import { ContactForm } from "./ContactForm";
